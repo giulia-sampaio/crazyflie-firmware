@@ -2,8 +2,13 @@
 #include "crazyflie.h"
 
 // Define all LEDs as digital output objects
+DigitalOut led(LED_RED_R, !false)
+DigitalOut led(LED_RED_L, !false)
+DigitalOut led(LED_GREEN_R, !false)
+DigitalOut led(LED_GREEN_L, !false)
 
 // Define all motors as PWM objects
+
 
 // Main program
 int main()
@@ -19,6 +24,6 @@ int main()
     // Blink green LEDs indicating end of program
     while(true)
     {
-        
+
     }
 }
