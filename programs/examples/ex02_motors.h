@@ -2,7 +2,7 @@
 #include "crazyflie.h"
 
 // Define motor 1 as PWM output object
-PwmOut motor(MOTOR1);
+PwmOut motor(MOTOR4);
 
 // Main program
 int main()
@@ -11,8 +11,8 @@ int main()
     while(true) 
     {
         motor = 0.2;
-        wait(0.5);
-        motor = 0.0;
-        wait(0.5);
+        // wait(0.5);
+        // motor = 0.0;
+        // wait(0.5);
     }
 }
