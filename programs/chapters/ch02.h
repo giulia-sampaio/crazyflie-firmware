@@ -9,9 +9,9 @@ PwmOut motor4(MOTOR4);
 
 // Definição dos parâmetros usados para determinar o PWM relativo a cada
 // velocidade
-float a = 1.4183e-07;
-float b = 2.2982e-10;
-float c = 0;
+// float a = 1.4183e-07;
+// float b = 2.2982e-10;
+// float c = 0;
 
 // Converts desired angular velocity (rad/s) to PWM signal (%)
 float control_motor(float omega) {
