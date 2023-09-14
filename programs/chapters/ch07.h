@@ -28,17 +28,17 @@ void mixer(float f_t, float tau_phi, float tau_theta, float tau_psi) {
     omega_1 = sqrt(omega_1_2);
   }
   float omega_2_2 = f_t / (4 * Kl) - tau_phi / (4 * Kl * l) +
-              tau_theta / (4 * Kl * l) + tau_psi / (4 * Kd);
+                    tau_theta / (4 * Kl * l) + tau_psi / (4 * Kd);
   if (omega_2_2 > 0) {
     omega_2 = sqrt(omega_2_2);
   }
   float omega_3_2 = f_t / (4 * Kl) + tau_phi / (4 * Kl * l) +
-              tau_theta / (4 * Kl * l) - tau_psi / (4 * Kd);
+                    tau_theta / (4 * Kl * l) - tau_psi / (4 * Kd);
   if (omega_3_2 > 0) {
     omega_3 = sqrt(omega_3_2);
   }
   float omega_4_2 = f_t / (4 * Kl) + tau_phi / (4 * Kl * l) -
-              tau_theta / (4 * Kl * l) + tau_psi / (4 * Kd);
+                    tau_theta / (4 * Kl * l) + tau_psi / (4 * Kd);
   if (omega_4_2 > 0) {
     omega_4 = sqrt(omega_4_2);
   }
