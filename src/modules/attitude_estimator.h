@@ -22,6 +22,7 @@ public:
 private:
   // IMU sensor object
   BMI088 imu;
+  float p_bias;
 };
 
 #endif

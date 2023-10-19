@@ -25,4 +25,19 @@ const float Kl = 1.6147e-08;
 // Constante de arrasto
 const float Kd = 1.2527e-10;
 
+// Frequência de corte filtro passa-baixa
+const int wc = 1;
+
+// Frequência de corte filtro passa-alta
+const float wc_a = 0.1;
+
+// Delta t discretização
+const float dt = 0.0001;
+
+// Fator de suavização filtro passa-baixa
+const float alpha = wc*dt/(1 + wc*dt);
+
+// Fator de suavização filtro passa-alta
+const float alpha_a = wc_a*dt/(1 + wc_a*dt);
+
 #endif
