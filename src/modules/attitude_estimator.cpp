@@ -24,8 +24,8 @@ void AttitudeEstimator ::init() {
 void AttitudeEstimator ::estimate() {
   imu.read();
   // Acelerômetro - FALTA DETERMINAR WC ADEQUADO - MATLAB
-  // float phi_a = atan2(-imu.ay, -imu.az);
-  // phi = (1 - alpha)*phi + phi_a*alpha;
+  float phi_a = atan2(-imu.ay, -imu.az);
+  phi = (1 - alpha)*phi + phi_a*alpha;
 
   // Giroscópio
   p = imu.gx - p_bias;
