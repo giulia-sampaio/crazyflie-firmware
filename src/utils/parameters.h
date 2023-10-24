@@ -37,4 +37,9 @@ const float dt = 0.002;
 // Fator de suavização filtro passa-baixa e passa-alta
 const float alpha = wc*dt/(1 + wc*dt);
 
+// Momentos de Inércia 
+const float Ixx = 16e-6;
+const float Iyy = 16e-6;
+const float Izz = 29e-6;    
+
 #endif
