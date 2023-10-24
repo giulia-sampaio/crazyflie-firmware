@@ -15,7 +15,7 @@ void AttitudeEstimator ::init() {
   imu.init();
   for (int i = 0; i < 500; i++) {
     imu.read();
-    p_bias = p_bias + imu.gx;
+    p_bias = p_bias + imu.gx/500.0;
     wait(dt);
   }
 }
@@ -23,12 +23,11 @@ void AttitudeEstimator ::init() {
 // Estimate Euler angles (rad ) and angular velocities ( rad /s)
 void AttitudeEstimator ::estimate() {
   imu.read();
-  // Acelerômetro - FALTA DETERMINAR WC ADEQUADO - MATLAB
+  // Acelerômetro
   float phi_a = atan2(-imu.ay, -imu.az);
-  phi = (1 - alpha)*phi + phi_a*alpha;
-
   // Giroscópio
   p = imu.gx - p_bias;
-  float phi_g = phi_g + p * dt;
-  phi = phi_g*(1 - alpha_a);  // alpha passa-alta é igual ao alpha passa-baixa???
+  float phi_g = phi + p * dt;
+  // fi
+  phi = (1 - alpha)*phi_g + alpha*phi_a;
 }
