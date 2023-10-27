@@ -2,6 +2,7 @@
 #include "mbed.h"
 #include "attitude_estimator.h"
 #include "attitude_controller.h"
+#include "mixer.h"
 
 // Crazyflie controller objects
 Mixer mixer;

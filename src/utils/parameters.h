@@ -26,20 +26,39 @@ const float Kl = 1.6147e-08;
 const float Kd = 1.2527e-10;
 
 // Frequência de corte filtro passa-baixa
-const int wc = 10;
-
-// Frequência de corte filtro passa-alta
-const float wc_a = 0.1;
+const int wc = 1.0;
 
 // Delta t discretização
 const float dt = 0.002;
 
 // Fator de suavização filtro passa-baixa e passa-alta
-const float alpha = wc*dt/(1 + wc*dt);
+const float alpha = wc*dt/(1.0 + wc*dt);
 
 // Momentos de Inércia 
 const float Ixx = 16e-6;
 const float Iyy = 16e-6;
 const float Izz = 29e-6;    
+
+// Requisitos controlador 
+const float Ts_phi_theta = 0.3;
+const float Ts_psi = 0.6;
+const float Ts_x_y_z = 2.0;
+const float OS = 0.05;
+
+const float zeta = abs(log(OS))/sqrt(pow(log(OS), 2) + pow(pi, 2));
+
+const float wn_phi_theta = 4.0/(Ts_phi_theta * zeta);
+const float wn_psi = 4.0/(Ts_psi * zeta);
+const float wn_x_y_z = 4.0/(Ts_x_y_z * zeta);
+
+// Ganhos Controlador 
+const float kp_phi = pow(wn_phi_theta, 2); // Proporcional 
+const float kd_phi = 2.0 * zeta * wn_phi_theta; // Derivativo
+
+const float kp_theta = pow(wn_phi_theta, 2); // Proporcional 
+const float kd_theta = 2.0 * zeta * wn_phi_theta; // Derivativo
+
+const float kp_psi = pow(wn_psi, 2); // Proporcional 
+const float kd_psi = 2.0 * zeta * wn_psi; // Derivativo
 
 #endif

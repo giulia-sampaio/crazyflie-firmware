@@ -49,5 +49,5 @@ void AttitudeEstimator ::estimate() {
   // ângulos
   phi = (1 - alpha) * phi_g + alpha * phi_a;
   theta = (1 - alpha) * theta_g + alpha * theta_a;
-  psi = (1 - alpha) * psi_g;
+  psi = psi_g;
 }
