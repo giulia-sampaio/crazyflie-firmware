@@ -7,11 +7,15 @@ Mixer mixer;
 // Main program
 int main() {
   // Actuate motor with 50% mg total thrust force (N) and zero torques
-  //mixer.actuate(0.5 * m * g, 0, 0, 0);
-  mixer.actuate(0, 0, 0, 0.005);
+  mixer.arm();
+  //mixer.actuate(0.2 * m * g, 0, 0, 0);
+  //mixer.actuate(0.2, 0, 0, 0);    //OK
+  //mixer.actuate(0, 0.005, 0, 0);  //OK
+  //mixer.actuate(0, 0, 0.005, 0);    //OK
+  mixer.actuate(0, 0, 0, -0.001); 
   wait(5);
   // Turn off all motors
-  mixer.actuate(0, 0, 0, 0);
+  mixer.disarm();
   // End of program
   while (true) {
   }

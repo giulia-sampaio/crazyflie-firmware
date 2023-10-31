@@ -4,7 +4,6 @@
 #include "crazyflie.h"
 #include "mbed.h"
 
-
 // Mixer class
 class Mixer {
 public:

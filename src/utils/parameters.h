@@ -15,9 +15,8 @@ const float I_zz = 29.0e-6; // kg.m^2
 const float l = 33.0e-3;    // m
 
 // Coeficientes para cálculo do PWM necessário para cada velocidade de rotação
-const float a = 1.4183e-07;
-const float b = 2.2982e-10;
-const float c = 0.0;
+const float a2 = 1.4183e-07;
+const float a1 = 2.2982e-10;
 
 // Constante de sustentação
 const float Kl = 1.6147e-08;
@@ -40,7 +39,7 @@ const float Iyy = 16e-6;
 const float Izz = 29e-6;    
 
 // Requisitos controlador 
-const float Ts_phi_theta = 0.3;
+const float Ts_phi_theta = 0.3;  //0.6
 const float Ts_psi = 0.6;
 const float Ts_x_y_z = 2.0;
 const float OS = 0.05;
