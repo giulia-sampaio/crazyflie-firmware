@@ -44,6 +44,5 @@ int main() {
   }
   // Disarm motors and end program
   mixer.disarm();
-  while (true)
-    ;
+  while (true);
 }

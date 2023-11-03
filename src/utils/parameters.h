@@ -50,7 +50,7 @@ const float wn_phi_theta = 4.0/(Ts_phi_theta * zeta);
 const float wn_psi = 4.0/(Ts_psi * zeta);
 const float wn_x_y_z = 4.0/(Ts_x_y_z * zeta);
 
-// Ganhos Controlador 
+// Ganhos Controlador Atitude
 const float kp_phi = pow(wn_phi_theta, 2); // Proporcional 
 const float kd_phi = 2.0 * zeta * wn_phi_theta; // Derivativo
 
@@ -59,5 +59,16 @@ const float kd_theta = 2.0 * zeta * wn_phi_theta; // Derivativo
 
 const float kp_psi = pow(wn_psi, 2); // Proporcional 
 const float kd_psi = 2.0 * zeta * wn_psi; // Derivativo
+
+// Delta t - Correção Altitude
+const float dt_range = 0.05;
+
+// Filtro passa-baixa ordem 2 - Controlador Altitude
+const int wc_alt = 10;
+const float zeta_alt = pow(2, 1/2)/2;
+
+// Ganhos Observador de Estados (ordem 2) - Controlador de Altitude
+const int l_1 = pow(wc_alt, 2);
+const float l_2 = 2 * zeta_alt * wc_alt;
 
 #endif
