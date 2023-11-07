@@ -29,6 +29,7 @@ void HorizontalEstimator ::correct(float phi, float theta, float p, float q,
     flow.read();
     float u_m = (sigma * flow.px + q) * d;
     float v_m = (sigma * flow.py - p) * d;
+
     u = u + L * dt * (u_m - u);
     v = v + L * dt * (v_m - v);
   }
