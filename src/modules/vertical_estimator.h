@@ -4,7 +4,7 @@
 #include "crazyflie.h"
 #include "mbed.h"
 
-// Vertical estimator class
+// Vertical estimator class 
 class VerticalEstimator {
 public:
   // Class constructor

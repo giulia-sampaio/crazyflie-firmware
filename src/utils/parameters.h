@@ -64,11 +64,20 @@ const float kd_psi = 2.0 * zeta * wn_psi; // Derivativo
 const float dt_range = 0.05;
 
 // Filtro passa-baixa ordem 2 - Controlador Altitude
-const int wc_alt = 10;
-const float zeta_alt = pow(2, 1/2)/2;
+const int wc_alt = 10.0;
+const float zeta_alt = sqrt(2.0)/2.0;
 
 // Ganhos Observador de Estados (ordem 2) - Controlador de Altitude
 const int l_1 = pow(wc_alt, 2);
 const float l_2 = 2 * zeta_alt * wc_alt;
+
+// Ganhos Controlador Altitude
+const float kp_vert = pow(wn_x_y_z, 2);
+const float kd_vert = 2.0 * zeta * wn_x_y_z;
+
+// Controlador Horizontal 
+const float sigma = 2 * tan((42.0 * pi / 180.0 )/ 2) / (420.0 * dt);
+const float wc_hor = 50.0;
+const float L = wc_hor;
 
 #endif
