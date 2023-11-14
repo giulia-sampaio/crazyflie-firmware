@@ -12,6 +12,6 @@ void VerticalController ::control(float z_r, float z, float w) {
 // velocity (m/s) with given controller gains
 float VerticalController ::control_siso(float pos_r, float pos, float vel,
                                         float kp, float kd) {
-  ac_z = kp * (pos_r - pos) + kd * (-vel);
+  float ac_z = kp * (pos_r - pos) + kd * (-vel);
   return ac_z;
 }

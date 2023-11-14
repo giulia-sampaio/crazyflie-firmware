@@ -42,7 +42,7 @@ const float Izz = 29e-6;
 const float Ts_phi_theta = 0.3;  //0.6
 const float Ts_psi = 0.6;
 const float Ts_x_y_z = 2.0;
-const float OS = 0.05;
+const float OS = 0.005;
 
 const float zeta = abs(log(OS))/sqrt(pow(log(OS), 2) + pow(pi, 2));
 
@@ -69,15 +69,21 @@ const float zeta_alt = sqrt(2.0)/2.0;
 
 // Ganhos Observador de Estados (ordem 2) - Controlador de Altitude
 const int l_1 = pow(wc_alt, 2);
-const float l_2 = 2 * zeta_alt * wc_alt;
+const float l_2 = 2.0 * zeta_alt * wc_alt;
 
 // Ganhos Controlador Altitude
-const float kp_vert = pow(wn_x_y_z, 2);
-const float kd_vert = 2.0 * zeta * wn_x_y_z;
+const float kp_vert = 5.8567; //pow(wn_x_y_z, 2);
+const float kd_vert = 3.4225; //2.0 * zeta * wn_x_y_z;
 
 // Controlador Horizontal 
-const float sigma = 2 * tan((42.0 * pi / 180.0 )/ 2) / (420.0 * dt);
+const float sigma = 2.0 * tan((42.0 * pi / 180.0 )/ 2.0) / (420.0 * dt);
 const float wc_hor = 50.0;
 const float L = wc_hor;
+
+const float Ts_hor = 2.0;
+const float wn_hor = 4.0/(Ts_hor * zeta);
+
+const float kp_hor = pow(wn_hor, 2);
+const float kd_hor = 2.0 * zeta * wn_hor;
 
 #endif

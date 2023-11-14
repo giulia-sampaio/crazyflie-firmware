@@ -19,7 +19,6 @@ private:
   // Control aceleration given reference position (m) and current position (m)
   // and velocity (m/s) with given controller gains
   float control_siso(float pos_r, float pos, float vel, float kp, float kd);
-  float ac_z;
 };
 
 #endif
