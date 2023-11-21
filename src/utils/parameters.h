@@ -72,18 +72,25 @@ const int l_1 = pow(wc_alt, 2);
 const float l_2 = 2.0 * zeta_alt * wc_alt;
 
 // Ganhos Controlador Altitude
-const float kp_vert = 5.8567; //pow(wn_x_y_z, 2);
-const float kd_vert = 3.4225; //2.0 * zeta * wn_x_y_z;
+const float kp_vert = pow(wn_x_y_z, 2);
+const float kd_vert = 2.0 * zeta * wn_x_y_z;
 
 // Controlador Horizontal 
 const float sigma = 2.0 * tan((42.0 * pi / 180.0 )/ 2.0) / (420.0 * dt);
 const float wc_hor = 50.0;
 const float L = wc_hor;
 
-const float Ts_hor = 2.0;
+const float Ts_hor = 2.2; 
 const float wn_hor = 4.0/(Ts_hor * zeta);
 
 const float kp_hor = pow(wn_hor, 2);
 const float kd_hor = 2.0 * zeta * wn_hor;
+
+// Controle de trajetória
+const float t0 = 2.0;
+const float tv = 5.0;
+const float tp = 2.0;
+const float h = 0.5;
+const float d = 2.0;
 
 #endif
